@@ -1,0 +1,27 @@
+{
+  "TST": [
+    {
+      "repositoryName": "testjvr",
+      "family": "TST",
+      "developmentBranch": "master",
+      "emailingList": "e mail",
+      "buildSteps": {
+        "rpm": {
+          "publish": true
+        }
+      }
+    },
+    {
+      "repositoryName": "testjvr",
+      "family": "TST",
+      "developmentBranch": "master",
+      "emailingList": "e mail",
+      "buildSteps": {
+        "rpm": {
+          "publish": true
+        }
+      }
+    }
+  
+  ]
+}
