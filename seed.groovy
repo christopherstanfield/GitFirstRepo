@@ -1,13 +1,16 @@
 import groovy.json.JsonSlurper
 
-//def project = 'quidryan/aws-sdk-test'
-//def branchApi = new URL("https://api.github.com/repos/${project}/branches")
+def project = 'DSL-Exemple'
 
-File jsonFile = new File("seed.groovy")
-def branches =new JsonSlurper().parse(jsonFile)
-//def branches = new groovy.json.JsonSlurper().parse(branchApi.newReader())
-branches.each {
-    def branchName = it.name
+
+    def jsonSlurper = new JsonSlurper()
+    def reader = new BufferedReader(new InputStreamReader(new FileInputStream("seed.groovy"),"UTF-8"));
+    data = jsonSlurper.parse(reader); 
+
+
+
+data.TST.each {
+    def branchName = it.repositoryName
     def jobName = "${project}-${branchName}".replaceAll('/','-')
     job(jobName) {
         scm {
